@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2487.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;html&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1">&lt;title&gt;Quiz Game&lt;/title&gt;</p>
+<p class="p1">&lt;link rel="stylesheet" href="style.css"&gt;</p>
+<p class="p1">&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.input-field {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 5px 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.form-container {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 60%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: auto;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.question {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.question p {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.choices label {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: block;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.input-field {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 10px 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.input-field label {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: block;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.input-field input {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-sizing: border-box;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>button {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 10px 15px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #28a745;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>button:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #218838;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function calculateScore() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>var answers = ["d", "b", "c", "d", "b"];</p>
+<p class="p1"><span class="Apple-converted-space">            </span>var score = 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>var name = document.getElementById("name").value;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>for (var i = 1; i &lt;= answers.length; i++) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>var userAnswer = document.querySelector('input[name="q' + i + '"]:checked');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (userAnswer &amp;&amp; userAnswer.value === answers[i - 1]) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>score += 20;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (name) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>alert('Hello, ' + name + '! Your score is ' + score);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>alert('Hello! Your score is ' + score);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>return false;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h1&gt;Quiz Game&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="form-container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;form onsubmit="return calculateScore()"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="input-field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;label for="name"&gt;Name:&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;input type="text" id="name" name="name" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div class="question"&gt;</p>
+<p class="p1">&lt;p&gt;1. What is my name?&lt;/p&gt;</p>
+<p class="p1">&lt;div class="choices"&gt;</p>
+<p class="p1">&lt;label&gt;&lt;input type="radio" name="q1" value="a"&gt; Risvan&lt;/label&gt;</p>
+<p class="p1">&lt;label&gt;&lt;input type="radio" name="q1" value="b"&gt; Rifaldo&lt;/label&gt;</p>
+<p class="p1">&lt;label&gt;&lt;input type="radio" name="q1" value="c"&gt; Wilson&lt;/label&gt;</p>
+<p class="p1">&lt;label&gt;&lt;input type="radio" name="q1" value="d"&gt; Nicholas&lt;/label&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space"> </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space"> </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div class="question"&gt;</p>
+<p class="p1">&lt;p&gt;2. Where am I from?&lt;/p&gt;</p>
+<p class="p1">&lt;div class="choices"&gt;</p>
+<p class="p1"><span class="Apple-converted-space"> </span>&lt;label&gt;&lt;input type="radio" name="q2" value="a"&gt; Japan&lt;/label&gt;</p>
+<p class="p1">&lt;label&gt;&lt;input type="radio" name="q2" value="b"&gt; Indonesia&lt;/label&gt;</p>
+<p class="p1">&lt;label&gt;&lt;input type="radio" name="q2" value="c"&gt; Malaysia&lt;/label&gt;</p>
+<p class="p1">&lt;label&gt;&lt;input type="radio" name="q2" value="d"&gt; Singapore&lt;/label&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p1">&lt;div class="question"&gt;</p>
+<p class="p1">&lt;p&gt;3. What is my hobby?&lt;/p&gt;</p>
+<p class="p1">&lt;div class="choices"&gt;</p>
+<p class="p1">&lt;label&gt;&lt;input type="radio" name="q3" value="a"&gt; Games&lt;/label&gt;</p>
+<p class="p1">&lt;label&gt;&lt;input type="radio" name="q3" value="b"&gt; Watching movies&lt;/label&gt;</p>
+<p class="p1">&lt;label&gt;&lt;input type="radio" name="q3" value="c"&gt; Cars&lt;/label&gt;</p>
+<p class="p1">&lt;label&gt;&lt;input type="radio" name="q3" value="d"&gt; Sports&lt;/label&gt;</p>
+<p class="p2"><span class="Apple-converted-space">               </span></p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">           </span></p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p1">&lt;div class="question"&gt;</p>
+<p class="p1">&lt;p&gt;4. Which one of this is my University?&lt;/p&gt;</p>
+<p class="p1">&lt;div class="choices"&gt;</p>
+<p class="p1">&lt;label&gt;&lt;input type="radio" name="q4" value="a"&gt; Binus&lt;/label&gt;</p>
+<p class="p1">&lt;label&gt;&lt;input type="radio" name="q4" value="b"&gt; UI&lt;/label&gt;</p>
+<p class="p1">&lt;label&gt;&lt;input type="radio" name="q4" value="c"&gt; Waseda&lt;/label&gt;</p>
+<p class="p1">&lt;label&gt;&lt;input type="radio" name="q4" value="d"&gt; Ritsumeikan&lt;/label&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p1">&lt;div class="question"&gt;</p>
+<p class="p1">&lt;p&gt;5. Which of this is true?&lt;/p&gt;</p>
+<p class="p1">&lt;div class="choices"&gt;</p>
+<p class="p1">&lt;label&gt;&lt;input type="radio" name="q5" value="a"&gt; I have a dog&lt;/label&gt;</p>
+<p class="p1">&lt;label&gt;&lt;input type="radio" name="q5" value="b"&gt; I used to work at seven-eleven&lt;/label&gt;</p>
+<p class="p1">&lt;label&gt;&lt;input type="radio" name="q5" value="c"&gt; I like bugs&lt;/label&gt;</p>
+<p class="p1">&lt;label&gt;&lt;input type="radio" name="q5" value="d"&gt; I never took jlpt&lt;/label&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space"> </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space"> </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;button type="submit"&gt;Submit Answers&lt;/button&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1">&lt;/form&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p2"><span class="Apple-converted-space">  </span></p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
